@@ -1,5 +1,5 @@
 Nancybands::Application.routes.draw do
-  root :to => 'bands#index'
+  root :to => 'welcome#index'
   resources :bands
 
   # The priority is based upon order of creation:
