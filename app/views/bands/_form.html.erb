@@ -1,0 +1,12 @@
+<%= simple_form_for @band, :html => { :class => 'form-horizontal' } do |f| %>
+
+  <%= f.input :name %>
+
+  <%= f.input :price %>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                bands_path, :class => 'btn' %>
+  </div>
+<% end %>
