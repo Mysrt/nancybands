@@ -5,11 +5,79 @@
  *= require_self
  *= require_tree .
  */
+$default_rounded_amount: 5px
+// Round corner at position by amount.
+@mixin round-corner($position, $amount: $default_rounded_amount)
+  border-#{$position}-radius: $amount
+  -webkit-border-#{$position}-radius: $amount
+ 
+@mixin round-corner-mozilla($position, $amount: $default_rounded_amount)
+  -moz-border-radius-#{$position}: $amount
+ 
+// Round left corners by amount
+@mixin round-left-corners($amount: $default_rounded_amount)
+  @include round-corner("top-left", $amount)
+  @include round-corner("bottom-left", $amount)
+  @include round-corner-mozilla("topleft", $amount)
+  @include round-corner-mozilla("bottomleft", $amount)
+ 
+// Round right corners by amount
+@mixin round-right-corners($amount: $default_rounded_amount)
+  @include round-corner("top-right", $amount)
+  @include round-corner("bottom-right", $amount)
+  @include round-corner-mozilla("topright", $amount)
+  @include round-corner-mozilla("bottomright", $amount)
+ 
+// Round top corners by amount
+@mixin round-top-corners($amount: 5px)
+  @include round-corner("top-left", $amount)
+  @include round-corner("top-right", $amount)
+  @include round-corner-mozilla("topleft", $amount)
+  @include round-corner-mozilla("topright", $amount)
+ 
+// Round bottom corners by amount
+@mixin round-bottom-corners($amount: $default_rounded_amount)
+  @include round-corner("bottom-left", $amount)
+  @include round-corner("bottom-right", $amount)
+  @include round-corner-mozilla("bottomleft", $amount)
+  @include round-corner-mozilla("bottomright", $amount)
+ 
+// Round all corners by amount
+@mixin round-corners($amount: $default_rounded_amount)
+  border-radius: $amount
+  -moz-border-radius: $amount
+  -webkit-border-radius: $amount
+
 
 .center
   text-align: center
 
+.content
 .container
-  margin-left: auto
-  margin-right: auto
-  
+.content
+  padding: 20px
+  padding-left: 40px
+  margin-top: 20px
+
+body
+  #myCarousel
+    .item
+      height: 400px
+  height: 100%
+  min-height: 800px
+  height: auto !important
+  .main
+    padding: 10px
+  .gradient
+    background: #ffffff
+    background: -moz-radial-gradient(center, ellipse cover, #ffffff 57%, #eec6ef 99%)
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(57%,#ffffff), color-stop(99%,#eec6ef))
+    background: -webkit-radial-gradient(center, ellipse cover, #ffffff 57%,#eec6ef 99%)
+    background: -o-radial-gradient(center, ellipse cover, #ffffff 57%,#eec6ef 99%)
+    background: -ms-radial-gradient(center, ellipse cover, #ffffff 57%,#eec6ef 99%)
+    background: radial-gradient(ellipse at center, #ffffff 57%,#eec6ef 99%)
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eec6ef',GradientType=1 )
+    height: 600px
+
+  h1
+    color: darken(#eec6ef, 10%)

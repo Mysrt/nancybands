@@ -1,0 +1,40 @@
+.main.span12
+
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  .span3
+  .span4
+    #myCarousel.carousel.slide
+      %ol.carousel-indicators
+        %li(data-target="#myCarousel" data-slide-to="0" class="active")
+        %li(data-target="#myCarousel" data-slide-to="1")
+        %li(data-target="#myCarousel" data-slide-to="2")
+      <!-- Carousel items -->
+      .carousel-inner
+        .active.item 
+          = image_tag 'bands.jpg'
+          .carousel-caption
+            %h4 Great gift
+            %p
+              Nancy bands make a great gift for the whole family
+        .item 
+          = image_tag 'bethany_band.jpg'
+          .carousel-caption
+            %h4 Stay put
+            %p
+              You can't get this little one to stay put but her headband isn't going anywhere
+        .item 
+          = image_tag 'more_bands.jpg'
+          .carousel-caption
+            %h4 Tons of great designs
+            %p
+              We have great designs that parents and children alike will love
+      <!-- Carousel nav -->
+      %a(class="carousel-control left" href="#myCarousel" data-slide="prev") &lsaquo;
+      %a(class="carousel-control right" href="#myCarousel" data-slide="next") &rsaquo;
+  .span4
+
+  
+
+-#.span3
+-#  = image_tag 'mom.jpg', :class => 'img-circle'
+
