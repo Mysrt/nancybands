@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -53,19 +54,15 @@
   </div>
 
   <div class="gradient">
-    <div class="container">
-      <div class="content">
-        <div class="row">
-          <% flash.each do |name, msg| %>
-            <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
-            <%= msg  %>
-            </div>
-          <% end %>
+    <div class="row">
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+          <%= msg  %>
+        </div>
+      <% end %>
+    </div>
 
-          <%= yield %>        
-      </div><!--/content-->
-
-    </div> <!-- /container -->
+    <%= yield %>        
 
     <%= javascript_include_tag "application" %>
   </div>

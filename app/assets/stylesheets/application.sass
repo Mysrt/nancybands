@@ -61,15 +61,27 @@ body
   .full
     width: 100%
 
+  .padded
+    padding-left: 20%
+    padding-right: 20%
   .hero-unit
-    background-color: #FFF
+    position: relative
+    color: #FFF
+    background: darken(#FFC0CB, 10%)
+
+    .browse_link
+      position: absolute
+      left: 20%
+      bottom: -5%
+
 
   #carousel_container
     left: 50%
     margin-left: -400px
     position: relative
 
-    background-color: #FFF
+
+    background-color: darken(#FFC0CB, 10%)
     padding: 20px
     padding-bottom: 8px
     @include round-corners
@@ -86,7 +98,8 @@ body
   height: 100%
   min-height: 800px
   height: auto !important
+
   .gradient
-    background: pink
+    background-color: #FFF
     min-height: 800px
 
