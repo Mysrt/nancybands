@@ -1,0 +1,128 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree .
+ */
+$default_rounded_amount: 5px;
+// Round corner at position by amount.
+@mixin round-corner($position, $amount: $default_rounded_amount){
+  border-#{$position}-radius: $amount;
+  -webkit-border-#{$position}-radius: $amount;
+}
+@mixin round-corner-mozilla($position, $amount: $default_rounded_amount){
+  -moz-border-radius-#{$position}: $amount;
+}
+// Round left corners by amount
+@mixin round-left-corners($amount: $default_rounded_amount){
+  @include round-corner("top-left", $amount);
+  @include round-corner("bottom-left", $amount);
+  @include round-corner-mozilla("topleft", $amount);
+  @include round-corner-mozilla("bottomleft", $amount);
+}
+// Round right corners by amount
+@mixin round-right-corners($amount: $default_rounded_amount){
+  @include round-corner("top-right", $amount);
+  @include round-corner("bottom-right", $amount);
+  @include round-corner-mozilla("topright", $amount);
+  @include round-corner-mozilla("bottomright", $amount);
+}
+ 
+// Round top corners by amount
+@mixin round-top-corners($amount: 5px){
+  @include round-corner("top-left", $amount);
+  @include round-corner("top-right", $amount);
+  @include round-corner-mozilla("topleft", $amount);
+  @include round-corner-mozilla("topright", $amount);
+}
+ 
+// Round bottom corners by amount
+@mixin round-bottom-corners($amount: $default_rounded_amount){
+  @include round-corner("bottom-left", $amount);
+  @include round-corner("bottom-right", $amount);
+  @include round-corner-mozilla("bottomleft", $amount);
+  @include round-corner-mozilla("bottomright", $amount);
+}
+ 
+// Round all corners by amount
+@mixin round-corners($amount: $default_rounded_amount){
+  border-radius: $amount;
+  -moz-border-radius: $amount;
+  -webkit-border-radius: $amount;
+}
+
+.center {
+  text-align: center;
+}
+
+body {
+  .full {
+    width: 100%;
+  }
+
+  .padded {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  .hero-unit {
+    text-align: center;
+    position: relative;
+    line-height: 1.25;
+    font-weight: 200;
+    color: #FFF;
+    background: #ff8c9f;
+    background: -moz-radial-gradient(center, ellipse cover, #ff8c9f 0%, #ff516b 66%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ff8c9f), color-stop(66%,#ff516b));
+    background: -webkit-radial-gradient(center, ellipse cover, #ff8c9f 0%,#ff516b 66%);
+    background: -o-radial-gradient(center, ellipse cover, #ff8c9f 0%,#ff516b 66%);
+    background: -ms-radial-gradient(center, ellipse cover, #ff8c9f 0%,#ff516b 66%);
+    background: radial-gradient(ellipse at center, #ff8c9f 0%,#ff516b 66%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8c9f', endColorstr='#ff516b',GradientType=1 );
+
+
+    @media screen and (min-width: 480px){
+      h1 {
+        font-size: 120px;
+        width: 100%;
+      }
+
+      p {
+        font-size: 45px;
+      }
+    }
+
+    @media screen and (max-width: 480px){
+      h1 {
+        font-size: 45;
+        width: 100%;
+      }
+
+      p {
+        font-size: 15px;
+      }
+    }
+
+
+    .browse_link {
+      margin-top: 40px;
+      text-align: center;
+    }
+  }
+
+
+  #carousel_container {
+    width: 40%;
+    margin-left: 30%;
+    background-color: #ff516b;
+    padding: 20px;
+    padding-bottom: 8px;
+    @include round-corners;
+  }
+
+
+  .gradient {
+    background-color: #FFF;
+  }
+}
