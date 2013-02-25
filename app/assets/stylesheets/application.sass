@@ -64,15 +64,33 @@ body
   .padded
     padding-left: 20%
     padding-right: 20%
+
   .hero-unit
+    text-align: center
     position: relative
+    line-height: 1.25
+    font-weight: 200
     color: #FFF
-    background: darken(#FFC0CB, 10%)
+
+    background: #ff8c9f
+    background: -moz-radial-gradient(center, ellipse cover, #ff8c9f 0%, #ff516b 66%)
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ff8c9f), color-stop(66%,#ff516b))
+    background: -webkit-radial-gradient(center, ellipse cover, #ff8c9f 0%,#ff516b 66%)
+    background: -o-radial-gradient(center, ellipse cover, #ff8c9f 0%,#ff516b 66%)
+    background: -ms-radial-gradient(center, ellipse cover, #ff8c9f 0%,#ff516b 66%)
+    background: radial-gradient(ellipse at center, #ff8c9f 0%,#ff516b 66%)
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8c9f', endColorstr='#ff516b',GradientType=1 )
+
+    h1
+      font-size: 120px
+      width: 100%
+
+    p
+      font-size: 40px
 
     .browse_link
-      position: absolute
-      left: 20%
-      bottom: -5%
+      margin-top: 40px
+      text-align: center
 
 
   #carousel_container
@@ -81,7 +99,7 @@ body
     position: relative
 
 
-    background-color: darken(#FFC0CB, 10%)
+    background-color: #ff516b
     padding: 20px
     padding-bottom: 8px
     @include round-corners
