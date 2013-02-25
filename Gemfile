@@ -16,6 +16,8 @@ gem 'rmagick'
 gem 'ruby-debug-base19x', '~> 0.11.30.pre4'
 gem 'ruby-debug19'
 gem 'haml'
+gem 'fog'
+gem 'dotenv'
 
 
 # Gems used only for assets and not required

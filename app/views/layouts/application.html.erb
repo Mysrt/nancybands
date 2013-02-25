@@ -52,6 +52,7 @@
     </div>
   </div>
 
+  <div class="gradient">
     <div class="container">
       <div class="content">
         <div class="row">
@@ -61,16 +62,14 @@
             </div>
           <% end %>
 
-          <%= yield %>        
         </div><!--/row-->
+        <%= yield %>        
       </div><!--/content-->
 
     </div> <!-- /container -->
 
-    <!-- Javascripts
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
+  </div>
 
   </body>
 </html>
